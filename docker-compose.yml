@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  wordpress:
+    image: wordpress:5.2-php7.2-apache
+    # environment:
+    #   WORDPRESS_DB_HOST: db
+    #   WORDPRESS_DB_USER: exampleuser
+    #   WORDPRESS_DB_PASSWORD: examplepass
+    #   WORDPRESS_DB_NAME: exampledb
+    ports:
+      - "80:80"
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD: examplepass
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: exampledb
